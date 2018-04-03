@@ -123,12 +123,17 @@ window.onload = function() {
 	    	});
 		}
 		if(matrix.length > 0) {
-			var columnsSumResult = sumByEachColumn(matrix);
-	    	var total = arraySum(columnsSumResult);
+			let columnsSumResult = sumByEachColumn(matrix);
+	    	let total = arraySum(columnsSumResult);
 	    	buildTable({matrix, columnsSumResult, total});
 		}
 	}
 
+	/**
+	 * Показывает строки таблицы по фильтрам
+	 *
+	 * @param {Object} target
+	 */
 	function displayFiltered(target) {
 		matrix = [];
 		clearTable("#targettable");
@@ -150,8 +155,8 @@ window.onload = function() {
         	}
         }
         if(matrix.length > 0) {
-			var columnsSumResult = sumByEachColumn(matrix);
-        	var total = arraySum(columnsSumResult);
+			let columnsSumResult = sumByEachColumn(matrix);
+        	let total = arraySum(columnsSumResult);
 	    	buildTable({matrix, columnsSumResult, total});
     	} else {
     		clearTable("#targettable");
@@ -168,8 +173,8 @@ window.onload = function() {
         	});
 		}
 		if(matrix.length > 0) {
-			var columnsSumResult = sumByEachColumn(matrix);
-        	var total = arraySum(columnsSumResult);
+			let columnsSumResult = sumByEachColumn(matrix);
+        	let total = arraySum(columnsSumResult);
 	    	buildTable({matrix, columnsSumResult, total});
     	}
 	});
