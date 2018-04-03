@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta description="some description here">
+    <meta keywords="some,keywords,here">
+    <meta author="Yuri Zotov">
+    
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/fontawesome-all.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link rel="stylesheet" href="css/styles.css">
+	
+	<script src="http://code.jquery.com/jquery-1.8.3.js" type="text/javascript"></script>
+	<script src="js/data.js" type="text/javascript"></script>
+	<script src="js/logic.js" type="text/javascript"></script>
+	
+	<title>Statistica</title>
+</head>
+<body>
+	<header>
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="top-menu">
+					<div class="container">					
+						<nav class="navbar navbar-expand-md">
+							<div class="navbar-collapse">
+								<ul class="navbar-nav ml-auto">
+									<li class="nav-item">
+										<a class="nav-link" href="#">
+											<i class="fas fa-user"></i>
+										</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link" href="#">
+											<i class="fas fa-sign-in-alt"></i>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</nav>
+					</div>
+				</div>     
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="container">
+					<div class="filters-block">
+						<div class="filters-block__item">
+							<label for="filter1">filter1<br />
+								<select id="filter1" name="filter1">
+								 	<option value="" selected>Не выбрано</option>
+								</select>
+							</label>
+						</div>
+						<div class="filters-block__item">
+							<label for="filter2">filter2<br />
+								<select id="filter2" name="filter2">
+									 <option value="" selected>Не выбрано</option>
+								</select>
+							</label>
+						</div>
+						<div class="filters-block__item">
+							<label for="filter3">filter3<br />
+								<select id="filter3" name="filter3">
+									 <option value="" selected>Не выбрано</option>
+								</select>
+							</label>
+						</div>	
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<section>
+		<div class="container">
+			<div class="content">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="main-filters-block">
+							<div class="main-filters-block__item">
+								<input type="button" id="all_btn" class="button" value="Все">
+							</div>
+							<div class="main-filters-block__item">
+								<input type="radio" name="mainFilter" value="A" id="mainFilterA">
+								<label for="mainFilterA">mainFilter A</label>
+							</div>
+							<div class="main-filters-block__item">
+								<input type="radio" name="mainFilter" value="B" id="mainFilterB" checked="checked">
+								<label for="mainFilterB">mainFilter B</label>
+							</div>
+						</div>
+						<div class="settings">
+							<p><i class="fas fa-cog"></i>&nbsp;<a href="#">Настройки</a></p>
+						</div>
+					</div>
+				</div>
+				<table id="targettable" cellspacing="0" border="0" cellpadding="5" width="100%">
+					<thead>
+						<tr>
+						    <td><input id="checkAllRows" type="checkbox"></td>
+						    <td>Название <input id="tableSearchField"  class="filter-field" type="text" placeholder="Фильтр по названию" /> &nbsp; <i class="fas fa-cog"></i></td>
+						    <td id="preMatrix"></td>
+						    <td><i class="fas fa-exclamation-triangle" title="info"></i></td>
+						</tr>
+					</thead>
+					<tbody></tbody>
+					<tfoot></tfoot>
+				</table>
+			</div>
+		</div>
+	</section>
+</body>
+</html>
+
+
+
+
+
