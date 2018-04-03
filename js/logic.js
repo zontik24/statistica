@@ -128,31 +128,15 @@ window.onload = function() {
 	    	buildTable({matrix, columnsSumResult, total});
 		}
 	}
-	
-	$('#all_btn').on('click', function(){
-		matrix = [];
-		clearTable("#targettable");
-		for(let i=0; i<rows.length; i++) {
-    		matrix.push({
-        		name : rows[i].name, 
-        		params : rows[i].params
-        	});
-		}
-		if(matrix.length > 0) {
-			var columnsSumResult = sumByEachColumn(matrix);
-        	var total = arraySum(columnsSumResult);
-	    	buildTable({matrix, columnsSumResult, total});
-    	}
-	});
 
-	$("input[name='mainFilter']").on('click', function() {
+	function displayFiltered(target) {
 		matrix = [];
 		clearTable("#targettable");
 		var selectedFiltersData = [];
 		selectedFiltersData.push($('#filter1').val());
 		selectedFiltersData.push($('#filter2').val());
 		selectedFiltersData.push($('#filter3').val());
-		var mainFilter = $(this).val();
+		var mainFilter = $(target).val();
 		for(let i=0; i<filters.length; i++) {
         	let mainFilterAttribute = filters[i].mainFilterAttribute;
         	let attributes = filters[i].attributes;
@@ -172,6 +156,30 @@ window.onload = function() {
     	} else {
     		clearTable("#targettable");
     	}
+	}
+	
+	$('#all_btn').on('click', function(){
+		matrix = [];
+		clearTable("#targettable");
+		for(let i=0; i<rows.length; i++) {
+    		matrix.push({
+        		name : rows[i].name, 
+        		params : rows[i].params
+        	});
+		}
+		if(matrix.length > 0) {
+			var columnsSumResult = sumByEachColumn(matrix);
+        	var total = arraySum(columnsSumResult);
+	    	buildTable({matrix, columnsSumResult, total});
+    	}
+	});
+
+	$("input[name='mainFilter']").on('click', function() {
+		displayFiltered(this);
+	});
+
+	$("select").on('change', function() {
+		displayFiltered(this);
 	});
 
 	$("#tableSearchField").on('keyup', function() {
